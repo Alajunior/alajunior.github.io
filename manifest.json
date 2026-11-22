@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "titulo": "Central de Projetos de Data Science",
+    "sobretitulo": "Neural Command Center",
+    "frase": "Quatro projetos de cobrança e jurídico reconstruídos do zero com dados sintéticos: os mesmos painéis, modelos e travas que mantenho em produção, abertos no navegador.",
+    "autor": "André Luis de Almeida Junior",
+    "cargo": "Cientista de Dados",
+    "linkedin": "https://www.linkedin.com/in/andr%C3%A9-junior-338767262",
+    "atualizado": "2026-11-22"
+  },
+  "numeros": [
+    {"valor": "4", "rotulo": "projetos"},
+    {"valor": "4", "rotulo": "painéis ao vivo"},
+    {"valor": "418", "rotulo": "testes automatizados"},
+    {"valor": "100%", "rotulo": "dados sintéticos"}
+  ],
+  "como_trabalho": [
+    {"titulo": "Fotos do dia e travas de publicação", "texto": "Cada dia vira uma foto com só o que se sabia antes dele. Antes de publicar, travas conferem volume, foto ausente e hash do modelo; se algo falha, o painel avisa e segue com a última publicação boa."},
+    {"titulo": "Nossa regra × tabela oficial", "texto": "Quando existe um número oficial, o meu é conciliado com ele todo dia. O painel mostra a diferença e o motivo, em vez de esconder."},
+    {"titulo": "Métricas honestas", "texto": "Validação fora do tempo, faixa de erro calculada fora da amostra e o resultado negativo quando ele aparece, como o modelo mais complexo que não ganhou o suficiente para publicar."},
+    {"titulo": "Dados sintéticos com gabarito", "texto": "Os geradores simulam a operação com os defeitos da fonte real e guardam o gabarito, então dá para medir se o modelo e as regras acertam."},
+    {"titulo": "Testes e CI em tudo", "texto": "Cada repositório tem testes que rodam a cada push, incluindo paridade entre o JavaScript do painel e uma referência em Python e uma guarda que barra qualquer traço de dado real."}
+  ],
+  "areas": [
+    {"id": "cobranca", "nome": "Cobrança", "resumo": "Acompanhar a operação, prever o fechamento e decidir quem acionar primeiro."},
+    {"id": "juridico", "nome": "Jurídico", "resumo": "Acompanhar os processos de busca e apreensão de veículos e onde o veículo foi visto."}
+  ],
+  "projetos": [
+    {
+      "id": "monitoramento", "area": "cobranca", "repo": "monitoramento-operacao-cobranca",
+      "nome": "Monitoramento da operação + previsão de fechamento",
+      "tecnica": "Previsão por razão de funil",
+      "metrica": "Erro de 3,2% às 14h",
+      "metrica_sub": "Previsão do fechamento do dia, fora da amostra, em 250 dias úteis; a faixa de 80% acerta 79% dos dias",
+      "selos": ["✓ Placar fora da amostra", "✓ Alerta de deriva", "✓ 41 testes"],
+      "status": "Publicado",
+      "negocio": {
+        "problema": "A operação precisa saber, ao longo do dia, se vai bater a meta e por quê.",
+        "responde": "Produção hora a hora de três carteiras, comparação com qualquer dia, funil do acionamento ao boleto e quanto o dia e o mês vão fechar.",
+        "resultado": "A previsão erra 3,2% às 14h e acerta a direção em 82% dos dias às 12h; um placar mostra o histórico de acertos."
+      },
+      "tecnico": {
+        "validacao": "Cada dia passado é previsto só com os dias anteriores, em todas as horas de 9h a 20h; WMAPE, viés e cobertura da faixa medidos fora da amostra.",
+        "destaques": ["Razão de funil com meia-vida de 30 dias e ajuste de viés", "Mês por média de dois ritmos, com faixa de 90%", "Decomposição LMDI do CPC em estoque × esforço × taxa", "Dois episódios de mudança simulados: volume e ritmo"],
+        "testes": 41,
+        "stack": ["Python", "pandas", "Chart.js", "HTML/CSS/JS", "GitHub Actions"]
+      },
+      "imagem": "monitoramento.webp"
+    },
+    {
+      "id": "propensao", "area": "cobranca", "repo": "propensao-pagamento-cobranca",
+      "nome": "Propensão a pagamento",
+      "tecnica": "Logística calibrada",
+      "metrica": "AUC 0,833",
+      "metrica_sub": "Backtest de produção: o Diamante paga 21,3% contra 1,39% do Bronze, com ordenação perfeita em todas as fases",
+      "selos": ["✓ Calibrado (ECE 0,18%)", "✓ Gate de candidatos", "✓ 81 testes"],
+      "status": "Publicado",
+      "negocio": {
+        "problema": "Há mais contratos do que operadores: por onde começar para trazer mais dinheiro?",
+        "responde": "A fila de trabalho por valor esperado, o simulador de capacidade, a qualidade do modelo em produção e o ganho para a diretoria.",
+        "resultado": "As faixas publicadas se comportaram: o Diamante paga 15 vezes mais que o Bronze, e a fila por valor traz mais R$ que a fila por chance."
+      },
+      "tecnico": {
+        "validacao": "Backtest de produção por fase, calibração (Brier, ECE), estabilidade semanal, PSI e uma bateria de 6 testes de validação.",
+        "destaques": ["Calibração leva a chance média de 34,4% para 4,14% (a real é 4,15%)", "Escada régua → logística → LightGBM com gate por bootstrap", "Escoragem diária com travas: foto ausente, volume, hash, publicação atômica", "Linha do tempo: sem modelo × congelado × retreino mensal"],
+        "testes": 81,
+        "stack": ["Python", "scikit-learn", "LightGBM", "Chart.js", "GitHub Actions"]
+      },
+      "imagem": "propensao.webp"
+    },
+    {
+      "id": "entrega", "area": "cobranca", "repo": "entrega-amigavel-cobranca",
+      "nome": "Entrega Amigável + auditoria de ligações",
+      "tecnica": "Classe rara + transcrição de áudio",
+      "metrica": "Recall de 56% no top 10%",
+      "metrica_sub": "Num evento com menos de 1% de ocorrência: lift de 5,6× e PR-AUC 0,055 contra 0,018 da régua",
+      "selos": ["✓ Teste de vazamento", "✓ Auditoria com 91,7% de acerto", "✓ 166 testes"],
+      "status": "Publicado",
+      "negocio": {
+        "problema": "Poucos clientes devolvem o carro de forma voluntária, e é o melhor desfecho para os dois lados: para quem ligar e ofertar?",
+        "responde": "A fila do dia com a classe, se dá para ofertar agora e o porquê; e a auditoria das ligações: o operador ofertou?",
+        "resultado": "Os 10% de maior score concentram 56% das entregas; a auditoria acerta 91,7% das ligações, sem nenhum falso positivo de oferta."
+      },
+      "tecnico": {
+        "validacao": "Pilha fora do tempo com as 6 últimas safras maduras; gate por bootstrap por contrato; precisão, recall, PR-AUC e captura no topo.",
+        "destaques": ["O LightGBM empatou e não publicou: resultado negativo documentado", "Validação aleatória × fora do tempo mostra o vazamento", "60 ligações sintéticas com vozes neurais, transcritas com faster-whisper", "Regras tolerantes a erro de transcrição, medidas contra gabarito"],
+        "testes": 166,
+        "stack": ["Python", "scikit-learn", "LightGBM", "faster-whisper", "Chart.js"]
+      },
+      "imagem": "entrega.webp"
+    },
+    {
+      "id": "busca-apreensao", "area": "juridico", "repo": "acompanhamento-busca-apreensao",
+      "nome": "Acompanhamento de busca e apreensão",
+      "tecnica": "Regra de etapas + travas + padrões de placa",
+      "metrica": "Paridade em 52 combinações",
+      "metrica_sub": "O JavaScript do painel e uma referência em Python dão os mesmos números em 52 combinações de filtros",
+      "selos": ["✓ Conciliação com a tabela oficial", "✓ Travas de publicação", "✓ 130 testes"],
+      "status": "Publicado",
+      "negocio": {
+        "problema": "O jurídico precisa saber o que vence hoje, onde cada processo trava e onde o veículo foi visto.",
+        "responde": "Prazos por etapa, escada de mandados, carteira por advogado, mapa por UF, veículos vistos por câmera e o padrão de circulação de cada placa.",
+        "resultado": "Um painel completo que segue publicando mesmo quando uma fonte falha, e diz qual fonte usou."
+      },
+      "tecnico": {
+        "validacao": "Paridade JS × Python, conciliação diária com a tabela oficial e travas testadas em horários com falha simulada.",
+        "destaques": ["Regra que escolhe a etapa de cada processo", "Payload em delta: 44 fotos num HTML de ~920 KB", "Padrões de placa: células de ~330 m, envoltória convexa e haversine", "Exportação .xlsx no navegador com os filtros ativos"],
+        "testes": 130,
+        "stack": ["Python", "pandas", "Leaflet", "Chart.js", "SheetJS"]
+      },
+      "imagem": "busca-apreensao.webp"
+    }
+  ]
+}
