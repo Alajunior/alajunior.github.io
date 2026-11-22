@@ -19,7 +19,7 @@ body[data-theme="midnight"]{
 body[data-theme="light"]{
   --bg:linear-gradient(180deg,#EDE6D8 0%,#F6F2E8 100%);
   --text:#23262b;--strong:#2e2a1e;--t2:#475569;--t3:#334155;
-  --ac:#8a6a1f;--ac2:#B98A3D;--acs:#6b5518;--acg:linear-gradient(135deg,#8a6a1f,#B98A3D);--ac-rgb:138,106,31;
+  --ac:#7a5c18;--ac2:#8a6a1f;--acs:#6b5518;--acg:linear-gradient(135deg,#7a5c18,#8a6a1f);--ac-rgb:122,92,24;
   --bd:#dbe4ee;--bd-h:#cfc6b2;--glass:#fff;--chip:#f1ede3;--on-ac:#fff;
   --pos:#166534;--pos-bg:#e8f5ec;--pos-bd:#b7dcc3;
   --p-dot:139,106,31;--p-line:139,106,31;--shadow:0 8px 24px rgba(46,42,30,.10);--scheme:light;
@@ -41,7 +41,7 @@ h1,h2,h3{color:var(--strong,var(--text));margin:0;line-height:1.2}
 .marca span{font-size:12.5px;color:var(--t2)}
 .ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .seg{display:inline-flex;border:1px solid var(--bd-h);border-radius:999px;padding:3px;background:var(--glass)}
-.seg button{font:inherit;font-size:13px;color:var(--t2);background:none;border:0;border-radius:999px;padding:8px 13px;min-height:40px;cursor:pointer}
+.seg button{font:inherit;font-size:13px;color:var(--t2);background:none;border:0;border-radius:999px;padding:9px 13px;min-height:44px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--acg);color:var(--on-ac);font-weight:700}
 .no-js .seg{display:none}
 .btn-in{display:inline-flex;align-items:center;min-height:40px;padding:8px 15px;border-radius:999px;border:1px solid var(--bd-h);text-decoration:none;font-weight:600;font-size:13.5px;background:var(--glass)}

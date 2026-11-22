@@ -15,11 +15,11 @@
     {"valor": "100%", "rotulo": "dados sintéticos"}
   ],
   "como_trabalho": [
-    {"titulo": "Fotos do dia e travas de publicação", "texto": "Cada dia vira uma foto com só o que se sabia antes dele. Antes de publicar, travas conferem volume, foto ausente e hash do modelo; se algo falha, o painel avisa e segue com a última publicação boa."},
-    {"titulo": "Nossa regra × tabela oficial", "texto": "Quando existe um número oficial, o meu é conciliado com ele todo dia. O painel mostra a diferença e o motivo, em vez de esconder."},
+    {"titulo": "Fotos do dia e travas de publicação", "texto": "Cada dia vira uma foto só com o que se sabia antes dele. Antes de publicar, travas conferem volume, foto ausente e hash do modelo; se algo falha, o painel avisa e segue com a última publicação boa."},
+    {"titulo": "Nossa regra × tabela oficial", "texto": "Quando existe um número oficial, o do painel é conciliado com ele todo dia. O painel mostra a diferença e o motivo, em vez de esconder."},
     {"titulo": "Métricas honestas", "texto": "Validação fora do tempo, faixa de erro calculada fora da amostra e o resultado negativo quando ele aparece, como o modelo mais complexo que não ganhou o suficiente para publicar."},
     {"titulo": "Dados sintéticos com gabarito", "texto": "Os geradores simulam a operação com os defeitos da fonte real e guardam o gabarito, então dá para medir se o modelo e as regras acertam."},
-    {"titulo": "Testes e CI em tudo", "texto": "Cada repositório tem testes que rodam a cada push, incluindo paridade entre o JavaScript do painel e uma referência em Python e uma guarda que barra qualquer traço de dado real."}
+    {"titulo": "Testes e CI em tudo", "texto": "Cada repositório tem testes que rodam a cada push e uma guarda que barra qualquer traço de dado real; no painel jurídico, um teste compara o JavaScript do painel com uma referência em Python."}
   ],
   "areas": [
     {"id": "cobranca", "nome": "Cobrança", "resumo": "Acompanhar a operação, prever o fechamento e decidir quem acionar primeiro."},
@@ -77,13 +77,13 @@
       "selos": ["✓ Teste de vazamento", "✓ Auditoria com 91,7% de acerto", "✓ 166 testes"],
       "status": "Publicado",
       "negocio": {
-        "problema": "Poucos clientes devolvem o carro de forma voluntária, e é o melhor desfecho para os dois lados: para quem ligar e ofertar?",
+        "problema": "Poucos clientes devolvem o carro de forma voluntária, e é bom para os dois lados: para quem ligar e ofertar?",
         "responde": "A fila do dia com a classe, se dá para ofertar agora e o porquê; e a auditoria das ligações: o operador ofertou?",
         "resultado": "Os 10% de maior score concentram 56% das entregas; a auditoria acerta 91,7% das ligações, sem nenhum falso positivo de oferta."
       },
       "tecnico": {
         "validacao": "Pilha fora do tempo com as 6 últimas safras maduras; gate por bootstrap por contrato; precisão, recall, PR-AUC e captura no topo.",
-        "destaques": ["O LightGBM empatou e não publicou: resultado negativo documentado", "Validação aleatória × fora do tempo mostra o vazamento", "60 ligações sintéticas com vozes neurais, transcritas com faster-whisper", "Regras tolerantes a erro de transcrição, medidas contra gabarito"],
+        "destaques": ["O LightGBM empatou e não publicou: resultado negativo documentado", "Validação aleatória × agrupada por contrato mostra o vazamento", "60 ligações sintéticas com vozes neurais, transcritas com faster-whisper", "Regras tolerantes a erro de transcrição: 91,7% contra o gabarito, 88,3% sem as 2 grafias aprendidas na calibração"],
         "testes": 166,
         "stack": ["Python", "scikit-learn", "LightGBM", "faster-whisper", "Chart.js"]
       },

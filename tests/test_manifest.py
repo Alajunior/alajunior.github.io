@@ -70,3 +70,16 @@ def test_imagens(m):
         f = RAIZ / "docs" / "img" / p["imagem"]
         assert f.is_file(), f
         assert f.stat().st_size <= 200_000, (f, f.stat().st_size)
+
+
+def test_afirmacoes_sustentadas_pelos_readmes(m):
+    """Revisão final: cada frase tem de bater com o README do projeto (o líder técnico vai conferir)."""
+    p = {x["id"]: x for x in m["projetos"]}
+    destaques = " ".join(p["entrega"]["tecnico"]["destaques"])
+    assert "agrupada por contrato" in destaques and "fora do tempo mostra o vazamento" not in destaques
+    assert "88,3%" in destaques                                   # o README mostra 91,7% e 88,3% juntos
+    assert "melhor desfecho" not in p["entrega"]["negocio"]["problema"]
+    ct = {c["titulo"]: c["texto"] for c in m["como_trabalho"]}
+    assert "jurídico" in ct["Testes e CI em tudo"]               # só o B.A.P tem paridade JS × Python
+    assert "com só o que" not in ct["Fotos do dia e travas de publicação"]
+    assert "o meu é" not in ct["Nossa regra × tabela oficial"]

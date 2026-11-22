@@ -110,7 +110,17 @@
       });
     }
     var t;
-    window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(function () { medir(); if (parado) desenhar(); }, 150); });
+    window.addEventListener("resize", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        if (window.innerWidth === W) {   // só a altura mudou (barra de endereço do celular ao rolar): a rede fica onde está
+          H = window.innerHeight; cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        } else {
+          medir();
+        }
+        if (parado) desenhar();
+      }, 150);
+    });
     return { cores: cores, iniciar: iniciar };
   })();
 

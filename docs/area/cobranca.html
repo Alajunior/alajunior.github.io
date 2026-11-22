@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../estilo.css">
 </head>
 <body data-theme="midnight" data-visao="negocio">
+<script>try{var t=localStorage.getItem("central_tema"),v=localStorage.getItem("central_visao");if(t)document.body.setAttribute("data-theme",t);if(v)document.body.setAttribute("data-visao",v)}catch(e){}</script>
 <canvas id="net" aria-hidden="true"></canvas>
 <header class="topo">
   <a class="marca" href="../index.html"><b>André Luis de Almeida Junior</b><span>Cientista de Dados</span></a>
@@ -85,14 +86,14 @@
       <p class="metrica-sub">Num evento com menos de 1% de ocorrência: lift de 5,6× e PR-AUC 0,055 contra 0,018 da régua</p>
       <div class="selos"><span class="selo">✓ Teste de vazamento</span><span class="selo">✓ Auditoria com 91,7% de acerto</span><span class="selo">✓ 166 testes</span></div>
       <dl class="so-negocio">
-        <dt>O problema</dt><dd>Poucos clientes devolvem o carro de forma voluntária, e é o melhor desfecho para os dois lados: para quem ligar e ofertar?</dd>
+        <dt>O problema</dt><dd>Poucos clientes devolvem o carro de forma voluntária, e é bom para os dois lados: para quem ligar e ofertar?</dd>
         <dt>O que o painel responde</dt><dd>A fila do dia com a classe, se dá para ofertar agora e o porquê; e a auditoria das ligações: o operador ofertou?</dd>
         <dt>Resultado</dt><dd>Os 10% de maior score concentram 56% das entregas; a auditoria acerta 91,7% das ligações, sem nenhum falso positivo de oferta.</dd>
       </dl>
       <div class="so-tecnica">
         <p><b>Técnica:</b> Classe rara + transcrição de áudio</p>
         <p><b>Validação:</b> Pilha fora do tempo com as 6 últimas safras maduras; gate por bootstrap por contrato; precisão, recall, PR-AUC e captura no topo.</p>
-        <ul class="destaques"><li>O LightGBM empatou e não publicou: resultado negativo documentado</li><li>Validação aleatória × fora do tempo mostra o vazamento</li><li>60 ligações sintéticas com vozes neurais, transcritas com faster-whisper</li><li>Regras tolerantes a erro de transcrição, medidas contra gabarito</li></ul>
+        <ul class="destaques"><li>O LightGBM empatou e não publicou: resultado negativo documentado</li><li>Validação aleatória × agrupada por contrato mostra o vazamento</li><li>60 ligações sintéticas com vozes neurais, transcritas com faster-whisper</li><li>Regras tolerantes a erro de transcrição: 91,7% contra o gabarito, 88,3% sem as 2 grafias aprendidas na calibração</li></ul>
         <p class="ntestes">166 testes automatizados, rodando a cada push</p>
       </div>
       <div class="acoes"><a class="btn pri" href="https://alajunior.github.io/entrega-amigavel-cobranca/" target="_blank" rel="noopener">Painel ao vivo ↗</a><a class="btn" href="https://github.com/Alajunior/entrega-amigavel-cobranca" target="_blank" rel="noopener">Código ↗</a></div>
