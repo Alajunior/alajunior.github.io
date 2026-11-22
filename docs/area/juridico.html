@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jurídico · Central de Projetos de Data Science</title>
+<meta name="description" content="Acompanhar os processos de busca e apreensão de veículos e onde o veículo foi visto.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='10' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%23e8a25b'/%3E%3Cpath d='M8 10L24 8L16 24Z' stroke='%23e8a25b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body data-theme="midnight" data-visao="negocio">
+<canvas id="net" aria-hidden="true"></canvas>
+<header class="topo">
+  <a class="marca" href="../index.html"><b>André Luis de Almeida Junior</b><span>Cientista de Dados</span></a>
+  <div class="ctrl">
+    <div class="seg" id="segVisao" role="group" aria-label="Visão">
+      <button type="button" data-visao="negocio" aria-pressed="true">Negócio</button><button type="button" data-visao="tecnica" aria-pressed="false">Técnica</button>
+    </div>
+    <div class="seg" id="segTema" role="group" aria-label="Tema">
+      <button type="button" data-tema="midnight" aria-pressed="true">Midnight</button><button type="button" data-tema="dark" aria-pressed="false">Dark</button><button type="button" data-tema="light" aria-pressed="false">Light</button>
+    </div>
+    <a class="btn-in" href="https://www.linkedin.com/in/andr%C3%A9-junior-338767262" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+<main>
+<a class="voltar" href="../index.html">← voltar à Central</a>
+<section class="area-head">
+  <div class="eye">Área</div>
+  <h1>Jurídico</h1>
+  <p class="frase">Acompanhar os processos de busca e apreensão de veículos e onde o veículo foi visto.</p>
+</section>
+<div class="mods-lista">
+<article class="mod" id="busca-apreensao">
+  <div class="mhead"><div><h2>Acompanhamento de busca e apreensão</h2><div class="chips so-tecnica"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Leaflet</span><span class="chip">Chart.js</span><span class="chip">SheetJS</span></div></div><span class="badge">● Publicado</span></div>
+  <div class="mgrid">
+    <div class="mtexto">
+      <div class="metrica">Paridade em 52 combinações</div>
+      <p class="metrica-sub">O JavaScript do painel e uma referência em Python dão os mesmos números em 52 combinações de filtros</p>
+      <div class="selos"><span class="selo">✓ Conciliação com a tabela oficial</span><span class="selo">✓ Travas de publicação</span><span class="selo">✓ 130 testes</span></div>
+      <dl class="so-negocio">
+        <dt>O problema</dt><dd>O jurídico precisa saber o que vence hoje, onde cada processo trava e onde o veículo foi visto.</dd>
+        <dt>O que o painel responde</dt><dd>Prazos por etapa, escada de mandados, carteira por advogado, mapa por UF, veículos vistos por câmera e o padrão de circulação de cada placa.</dd>
+        <dt>Resultado</dt><dd>Um painel completo que segue publicando mesmo quando uma fonte falha, e diz qual fonte usou.</dd>
+      </dl>
+      <div class="so-tecnica">
+        <p><b>Técnica:</b> Regra de etapas + travas + padrões de placa</p>
+        <p><b>Validação:</b> Paridade JS × Python, conciliação diária com a tabela oficial e travas testadas em horários com falha simulada.</p>
+        <ul class="destaques"><li>Regra que escolhe a etapa de cada processo</li><li>Payload em delta: 44 fotos num HTML de ~920 KB</li><li>Padrões de placa: células de ~330 m, envoltória convexa e haversine</li><li>Exportação .xlsx no navegador com os filtros ativos</li></ul>
+        <p class="ntestes">130 testes automatizados, rodando a cada push</p>
+      </div>
+      <div class="acoes"><a class="btn pri" href="https://alajunior.github.io/acompanhamento-busca-apreensao/" target="_blank" rel="noopener">Painel ao vivo ↗</a><a class="btn" href="https://github.com/Alajunior/acompanhamento-busca-apreensao" target="_blank" rel="noopener">Código ↗</a></div>
+    </div>
+    <a class="shot" href="https://alajunior.github.io/acompanhamento-busca-apreensao/" target="_blank" rel="noopener"><img src="../img/busca-apreensao.webp" alt="Captura do painel: Acompanhamento de busca e apreensão" width="1200" height="750" loading="lazy"></a>
+  </div>
+</article>
+</div>
+
+</main>
+<footer class="rodape">
+  <p>Projetos de portfólio com dados 100% sintéticos. Nenhum dado real de cliente ou de empresa. Atualizado em 22/11/2026.</p>
+</footer>
+<script src="../central.js"></script>
+</body>
+</html>

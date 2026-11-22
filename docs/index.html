@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de Projetos de Data Science · André Luis de Almeida Junior</title>
+<meta name="description" content="Quatro projetos de cobrança e jurídico reconstruídos do zero com dados sintéticos: os mesmos painéis, modelos e travas que mantenho em produção, abertos no navegador.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='10' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%23e8a25b'/%3E%3Cpath d='M8 10L24 8L16 24Z' stroke='%23e8a25b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body data-theme="midnight" data-visao="negocio">
+<canvas id="net" aria-hidden="true"></canvas>
+<header class="topo">
+  <a class="marca" href="index.html"><b>André Luis de Almeida Junior</b><span>Cientista de Dados</span></a>
+  <div class="ctrl">
+    <div class="seg" id="segVisao" role="group" aria-label="Visão">
+      <button type="button" data-visao="negocio" aria-pressed="true">Negócio</button><button type="button" data-visao="tecnica" aria-pressed="false">Técnica</button>
+    </div>
+    <div class="seg" id="segTema" role="group" aria-label="Tema">
+      <button type="button" data-tema="midnight" aria-pressed="true">Midnight</button><button type="button" data-tema="dark" aria-pressed="false">Dark</button><button type="button" data-tema="light" aria-pressed="false">Light</button>
+    </div>
+    <a class="btn-in" href="https://www.linkedin.com/in/andr%C3%A9-junior-338767262" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="eye">Neural Command Center</div>
+  <h1>Central de Projetos de <span class="g">Data Science</span></h1>
+  <p class="frase">Quatro projetos de cobrança e jurídico reconstruídos do zero com dados sintéticos: os mesmos painéis, modelos e travas que mantenho em produção, abertos no navegador.</p>
+  <div class="stats">
+    <div class="stat"><b>4</b><span>projetos</span></div>
+    <div class="stat"><b>4</b><span>painéis ao vivo</span></div>
+    <div class="stat"><b>418</b><span>testes automatizados</span></div>
+    <div class="stat"><b>100%</b><span>dados sintéticos</span></div>
+  </div>
+</section>
+<section class="bloco">
+  <div class="sec"><h2>Áreas</h2><div class="ln"></div><div class="cnt">2 áreas</div></div>
+  <div class="cards">
+    <a class="cart" href="area/cobranca.html"><div class="eye">3 projetos</div><h3>Cobrança</h3><p>Acompanhar a operação, prever o fechamento e decidir quem acionar primeiro.</p><ul class="mods"><li>Monitoramento da operação + previsão de fechamento</li><li>Propensão a pagamento</li><li>Entrega Amigável + auditoria de ligações</li></ul><div class="enter">Entrar →</div></a>
+    <a class="cart" href="area/juridico.html"><div class="eye">1 projeto</div><h3>Jurídico</h3><p>Acompanhar os processos de busca e apreensão de veículos e onde o veículo foi visto.</p><ul class="mods"><li>Acompanhamento de busca e apreensão</li></ul><div class="enter">Entrar →</div></a>
+  </div>
+</section>
+<section class="bloco">
+  <div class="sec"><h2>Como trabalho</h2><div class="ln"></div><div class="cnt">5 práticas</div></div>
+  <div class="praticas">
+    <article class="pratica"><h3>Fotos do dia e travas de publicação</h3><p>Cada dia vira uma foto com só o que se sabia antes dele. Antes de publicar, travas conferem volume, foto ausente e hash do modelo; se algo falha, o painel avisa e segue com a última publicação boa.</p></article>
+    <article class="pratica"><h3>Nossa regra × tabela oficial</h3><p>Quando existe um número oficial, o meu é conciliado com ele todo dia. O painel mostra a diferença e o motivo, em vez de esconder.</p></article>
+    <article class="pratica"><h3>Métricas honestas</h3><p>Validação fora do tempo, faixa de erro calculada fora da amostra e o resultado negativo quando ele aparece, como o modelo mais complexo que não ganhou o suficiente para publicar.</p></article>
+    <article class="pratica"><h3>Dados sintéticos com gabarito</h3><p>Os geradores simulam a operação com os defeitos da fonte real e guardam o gabarito, então dá para medir se o modelo e as regras acertam.</p></article>
+    <article class="pratica"><h3>Testes e CI em tudo</h3><p>Cada repositório tem testes que rodam a cada push, incluindo paridade entre o JavaScript do painel e uma referência em Python e uma guarda que barra qualquer traço de dado real.</p></article>
+  </div>
+</section>
+<section class="bloco sobre">
+  <p>Esta Central é a réplica do lançador interno que uso no trabalho para reunir os modelos e painéis da operação. Cada projeto foi reescrito do zero, com dados sintéticos, para poder ser mostrado. Use o botão <b>Negócio / Técnica</b> no topo para trocar o nível de detalhe.</p>
+</section>
+
+</main>
+<footer class="rodape">
+  <p>Projetos de portfólio com dados 100% sintéticos. Nenhum dado real de cliente ou de empresa. Atualizado em 22/11/2026.</p>
+</footer>
+<script src="central.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cobrança · Central de Projetos de Data Science</title>
+<meta name="description" content="Acompanhar a operação, prever o fechamento e decidir quem acionar primeiro.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='10' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%23e8a25b'/%3E%3Cpath d='M8 10L24 8L16 24Z' stroke='%23e8a25b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body data-theme="midnight" data-visao="negocio">
+<canvas id="net" aria-hidden="true"></canvas>
+<header class="topo">
+  <a class="marca" href="../index.html"><b>André Luis de Almeida Junior</b><span>Cientista de Dados</span></a>
+  <div class="ctrl">
+    <div class="seg" id="segVisao" role="group" aria-label="Visão">
+      <button type="button" data-visao="negocio" aria-pressed="true">Negócio</button><button type="button" data-visao="tecnica" aria-pressed="false">Técnica</button>
+    </div>
+    <div class="seg" id="segTema" role="group" aria-label="Tema">
+      <button type="button" data-tema="midnight" aria-pressed="true">Midnight</button><button type="button" data-tema="dark" aria-pressed="false">Dark</button><button type="button" data-tema="light" aria-pressed="false">Light</button>
+    </div>
+    <a class="btn-in" href="https://www.linkedin.com/in/andr%C3%A9-junior-338767262" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+<main>
+<a class="voltar" href="../index.html">← voltar à Central</a>
+<section class="area-head">
+  <div class="eye">Área</div>
+  <h1>Cobrança</h1>
+  <p class="frase">Acompanhar a operação, prever o fechamento e decidir quem acionar primeiro.</p>
+</section>
+<div class="mods-lista">
+<article class="mod" id="monitoramento">
+  <div class="mhead"><div><h2>Monitoramento da operação + previsão de fechamento</h2><div class="chips so-tecnica"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Chart.js</span><span class="chip">HTML/CSS/JS</span><span class="chip">GitHub Actions</span></div></div><span class="badge">● Publicado</span></div>
+  <div class="mgrid">
+    <div class="mtexto">
+      <div class="metrica">Erro de 3,2% às 14h</div>
+      <p class="metrica-sub">Previsão do fechamento do dia, fora da amostra, em 250 dias úteis; a faixa de 80% acerta 79% dos dias</p>
+      <div class="selos"><span class="selo">✓ Placar fora da amostra</span><span class="selo">✓ Alerta de deriva</span><span class="selo">✓ 41 testes</span></div>
+      <dl class="so-negocio">
+        <dt>O problema</dt><dd>A operação precisa saber, ao longo do dia, se vai bater a meta e por quê.</dd>
+        <dt>O que o painel responde</dt><dd>Produção hora a hora de três carteiras, comparação com qualquer dia, funil do acionamento ao boleto e quanto o dia e o mês vão fechar.</dd>
+        <dt>Resultado</dt><dd>A previsão erra 3,2% às 14h e acerta a direção em 82% dos dias às 12h; um placar mostra o histórico de acertos.</dd>
+      </dl>
+      <div class="so-tecnica">
+        <p><b>Técnica:</b> Previsão por razão de funil</p>
+        <p><b>Validação:</b> Cada dia passado é previsto só com os dias anteriores, em todas as horas de 9h a 20h; WMAPE, viés e cobertura da faixa medidos fora da amostra.</p>
+        <ul class="destaques"><li>Razão de funil com meia-vida de 30 dias e ajuste de viés</li><li>Mês por média de dois ritmos, com faixa de 90%</li><li>Decomposição LMDI do CPC em estoque × esforço × taxa</li><li>Dois episódios de mudança simulados: volume e ritmo</li></ul>
+        <p class="ntestes">41 testes automatizados, rodando a cada push</p>
+      </div>
+      <div class="acoes"><a class="btn pri" href="https://alajunior.github.io/monitoramento-operacao-cobranca/" target="_blank" rel="noopener">Painel ao vivo ↗</a><a class="btn" href="https://github.com/Alajunior/monitoramento-operacao-cobranca" target="_blank" rel="noopener">Código ↗</a></div>
+    </div>
+    <a class="shot" href="https://alajunior.github.io/monitoramento-operacao-cobranca/" target="_blank" rel="noopener"><img src="../img/monitoramento.webp" alt="Captura do painel: Monitoramento da operação + previsão de fechamento" width="1200" height="750" loading="lazy"></a>
+  </div>
+</article>
+<article class="mod" id="propensao">
+  <div class="mhead"><div><h2>Propensão a pagamento</h2><div class="chips so-tecnica"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">Chart.js</span><span class="chip">GitHub Actions</span></div></div><span class="badge">● Publicado</span></div>
+  <div class="mgrid">
+    <div class="mtexto">
+      <div class="metrica">AUC 0,833</div>
+      <p class="metrica-sub">Backtest de produção: o Diamante paga 21,3% contra 1,39% do Bronze, com ordenação perfeita em todas as fases</p>
+      <div class="selos"><span class="selo">✓ Calibrado (ECE 0,18%)</span><span class="selo">✓ Gate de candidatos</span><span class="selo">✓ 81 testes</span></div>
+      <dl class="so-negocio">
+        <dt>O problema</dt><dd>Há mais contratos do que operadores: por onde começar para trazer mais dinheiro?</dd>
+        <dt>O que o painel responde</dt><dd>A fila de trabalho por valor esperado, o simulador de capacidade, a qualidade do modelo em produção e o ganho para a diretoria.</dd>
+        <dt>Resultado</dt><dd>As faixas publicadas se comportaram: o Diamante paga 15 vezes mais que o Bronze, e a fila por valor traz mais R$ que a fila por chance.</dd>
+      </dl>
+      <div class="so-tecnica">
+        <p><b>Técnica:</b> Logística calibrada</p>
+        <p><b>Validação:</b> Backtest de produção por fase, calibração (Brier, ECE), estabilidade semanal, PSI e uma bateria de 6 testes de validação.</p>
+        <ul class="destaques"><li>Calibração leva a chance média de 34,4% para 4,14% (a real é 4,15%)</li><li>Escada régua → logística → LightGBM com gate por bootstrap</li><li>Escoragem diária com travas: foto ausente, volume, hash, publicação atômica</li><li>Linha do tempo: sem modelo × congelado × retreino mensal</li></ul>
+        <p class="ntestes">81 testes automatizados, rodando a cada push</p>
+      </div>
+      <div class="acoes"><a class="btn pri" href="https://alajunior.github.io/propensao-pagamento-cobranca/" target="_blank" rel="noopener">Painel ao vivo ↗</a><a class="btn" href="https://github.com/Alajunior/propensao-pagamento-cobranca" target="_blank" rel="noopener">Código ↗</a></div>
+    </div>
+    <a class="shot" href="https://alajunior.github.io/propensao-pagamento-cobranca/" target="_blank" rel="noopener"><img src="../img/propensao.webp" alt="Captura do painel: Propensão a pagamento" width="1200" height="750" loading="lazy"></a>
+  </div>
+</article>
+<article class="mod" id="entrega">
+  <div class="mhead"><div><h2>Entrega Amigável + auditoria de ligações</h2><div class="chips so-tecnica"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">faster-whisper</span><span class="chip">Chart.js</span></div></div><span class="badge">● Publicado</span></div>
+  <div class="mgrid">
+    <div class="mtexto">
+      <div class="metrica">Recall de 56% no top 10%</div>
+      <p class="metrica-sub">Num evento com menos de 1% de ocorrência: lift de 5,6× e PR-AUC 0,055 contra 0,018 da régua</p>
+      <div class="selos"><span class="selo">✓ Teste de vazamento</span><span class="selo">✓ Auditoria com 91,7% de acerto</span><span class="selo">✓ 166 testes</span></div>
+      <dl class="so-negocio">
+        <dt>O problema</dt><dd>Poucos clientes devolvem o carro de forma voluntária, e é o melhor desfecho para os dois lados: para quem ligar e ofertar?</dd>
+        <dt>O que o painel responde</dt><dd>A fila do dia com a classe, se dá para ofertar agora e o porquê; e a auditoria das ligações: o operador ofertou?</dd>
+        <dt>Resultado</dt><dd>Os 10% de maior score concentram 56% das entregas; a auditoria acerta 91,7% das ligações, sem nenhum falso positivo de oferta.</dd>
+      </dl>
+      <div class="so-tecnica">
+        <p><b>Técnica:</b> Classe rara + transcrição de áudio</p>
+        <p><b>Validação:</b> Pilha fora do tempo com as 6 últimas safras maduras; gate por bootstrap por contrato; precisão, recall, PR-AUC e captura no topo.</p>
+        <ul class="destaques"><li>O LightGBM empatou e não publicou: resultado negativo documentado</li><li>Validação aleatória × fora do tempo mostra o vazamento</li><li>60 ligações sintéticas com vozes neurais, transcritas com faster-whisper</li><li>Regras tolerantes a erro de transcrição, medidas contra gabarito</li></ul>
+        <p class="ntestes">166 testes automatizados, rodando a cada push</p>
+      </div>
+      <div class="acoes"><a class="btn pri" href="https://alajunior.github.io/entrega-amigavel-cobranca/" target="_blank" rel="noopener">Painel ao vivo ↗</a><a class="btn" href="https://github.com/Alajunior/entrega-amigavel-cobranca" target="_blank" rel="noopener">Código ↗</a></div>
+    </div>
+    <a class="shot" href="https://alajunior.github.io/entrega-amigavel-cobranca/" target="_blank" rel="noopener"><img src="../img/entrega.webp" alt="Captura do painel: Entrega Amigável + auditoria de ligações" width="1200" height="750" loading="lazy"></a>
+  </div>
+</article>
+</div>
+
+</main>
+<footer class="rodape">
+  <p>Projetos de portfólio com dados 100% sintéticos. Nenhum dado real de cliente ou de empresa. Atualizado em 22/11/2026.</p>
+</footer>
+<script src="../central.js"></script>
+</body>
+</html>

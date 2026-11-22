@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$titulo_pagina</title>
+<meta name="description" content="$descricao">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='10' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23e8a25b'/%3E%3Ccircle cx='16' cy='24' r='3' fill='%23e8a25b'/%3E%3Cpath d='M8 10L24 8L16 24Z' stroke='%23e8a25b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="${raiz}estilo.css">
+</head>
+<body data-theme="midnight" data-visao="negocio">
+<canvas id="net" aria-hidden="true"></canvas>
+<header class="topo">
+  <a class="marca" href="${raiz}index.html"><b>$autor</b><span>$cargo</span></a>
+  <div class="ctrl">
+    <div class="seg" id="segVisao" role="group" aria-label="Visão">
+      <button type="button" data-visao="negocio" aria-pressed="true">Negócio</button><button type="button" data-visao="tecnica" aria-pressed="false">Técnica</button>
+    </div>
+    <div class="seg" id="segTema" role="group" aria-label="Tema">
+      <button type="button" data-tema="midnight" aria-pressed="true">Midnight</button><button type="button" data-tema="dark" aria-pressed="false">Dark</button><button type="button" data-tema="light" aria-pressed="false">Light</button>
+    </div>
+    <a class="btn-in" href="$linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+<main>
+$conteudo
+</main>
+<footer class="rodape">
+  <p>Projetos de portfólio com dados 100% sintéticos. Nenhum dado real de cliente ou de empresa. Atualizado em $atualizado.</p>
+</footer>
+<script src="${raiz}central.js"></script>
+</body>
+</html>
