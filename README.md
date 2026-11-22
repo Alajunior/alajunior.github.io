@@ -40,7 +40,7 @@ Um botão no topo troca o nível de detalhe:
 ```bash
 pip install -r requirements.txt
 python build.py                        # gera docs/index.html e docs/area/*.html
-python -m pytest                       # 19 testes
+python -m pytest                       # 24 testes
 python -m http.server --directory docs # abre em http://localhost:8000
 ```
 
