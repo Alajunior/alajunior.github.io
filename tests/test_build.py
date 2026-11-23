@@ -31,7 +31,7 @@ def test_paginas_geradas(site):
 def test_home(site):
     h = ler(site[0], "index.html")
     assert "Central de Projetos de Data Science" in h and "Neural Command Center" in h
-    assert ">418<" in h
+    assert ">511<" in h
     for item in MANIFEST["como_trabalho"]:
         assert item["titulo"] in h
     assert 'href="area/cobranca.html"' in h and 'href="area/juridico.html"' in h

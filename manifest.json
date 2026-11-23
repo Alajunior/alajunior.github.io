@@ -11,7 +11,7 @@
   "numeros": [
     {"valor": "4", "rotulo": "projetos"},
     {"valor": "4", "rotulo": "painéis ao vivo"},
-    {"valor": "418", "rotulo": "testes automatizados"},
+    {"valor": "511", "rotulo": "testes automatizados"},
     {"valor": "100%", "rotulo": "dados sintéticos"}
   ],
   "numeros_tecnica": [
@@ -101,17 +101,17 @@
       "tecnica": "Regra de etapas + travas + padrões de placa",
       "metrica": "Paridade em 52 combinações",
       "metrica_sub": "O JavaScript do painel e uma referência em Python dão os mesmos números em 52 combinações de filtros",
-      "selos": ["✓ Conciliação com a tabela oficial", "✓ Travas de publicação", "✓ 130 testes"],
+      "selos": ["✓ Conciliação com a tabela oficial", "✓ Travas de publicação", "✓ 223 testes"],
       "status": "Publicado",
       "negocio": {
         "problema": "O jurídico precisa saber o que vence hoje, onde cada processo trava e onde o veículo foi visto.",
-        "responde": "Prazos por etapa, escada de mandados, carteira por advogado, mapa por UF, veículos vistos por câmera e o padrão de circulação de cada placa.",
+        "responde": "Prazos por etapa, escada de mandados, carteira por advogado, mapa por UF, a planilha do jurídico com 12 seções e metas, veículos vistos por câmera e os padrões e trajetos de cada placa.",
         "resultado": "Um painel completo que segue publicando mesmo quando uma fonte falha, e diz qual fonte usou."
       },
       "tecnico": {
         "validacao": "Paridade JS × Python, conciliação diária com a tabela oficial e travas testadas em horários com falha simulada.",
-        "destaques": ["Regra que escolhe a etapa de cada processo", "Payload em delta: 44 fotos num HTML de ~920 KB", "Padrões de placa: células de ~330 m, envoltória convexa e haversine", "Exportação .xlsx no navegador com os filtros ativos"],
-        "testes": 130,
+        "destaques": ["Regra que escolhe a etapa de cada processo", "Payload em delta: 44 fotos num HTML de ~920 KB", "Padrões e trajetos de placa: células de ~330 m, sequência A→B→C, trajetos repetidos, haversine", "Exportação .xlsx no navegador com os filtros ativos"],
+        "testes": 223,
         "stack": ["Python", "pandas", "Leaflet", "Chart.js", "SheetJS"]
       },
       "imagem": "busca-apreensao.webp"

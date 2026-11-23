@@ -62,7 +62,7 @@ def test_testes_batem_com_readmes(m):
             n = re.search(r"#\s*(\d+) testes", readme.read_text(encoding="utf-8"))
             assert n and int(n.group(1)) == p["tecnico"]["testes"], p["repo"]
     item = next(n for n in m["numeros"] if "testes" in n["rotulo"])
-    assert item["valor"] == str(soma) == "418"
+    assert item["valor"] == str(soma) == "511"
 
 
 def test_imagens(m):
