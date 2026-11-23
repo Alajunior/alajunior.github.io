@@ -41,6 +41,16 @@ def test_home(site):
     assert "André Luis de Almeida Junior" in h and "Cientista de Dados" in h
 
 
+def test_home_muda_com_a_visao(site):
+    """O botão Negócio / Técnica tem de mudar algo visível também na home."""
+    h = ler(site[0], "index.html").replace("&amp;", "&")
+    assert 'class="stats so-negocio"' in h and 'class="stats so-tecnica"' in h
+    for n in MANIFEST["numeros_tecnica"]:
+        assert f'<b>{n["valor"]}</b>' in h
+    for p in MANIFEST["projetos"]:
+        assert f'{p["tecnica"]} · {p["metrica"]}' in h
+
+
 def test_area(site):
     saida = site[0]
     for area, n in (("cobranca", 3), ("juridico", 1)):

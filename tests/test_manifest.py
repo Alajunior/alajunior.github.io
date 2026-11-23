@@ -30,7 +30,7 @@ def test_estrutura(m):
         assert k in m
     for k in ("titulo", "sobretitulo", "frase", "autor", "cargo", "linkedin", "atualizado"):
         assert m["meta"][k]
-    assert len(m["numeros"]) == 4 and len(m["como_trabalho"]) == 5
+    assert len(m["numeros"]) == 4 and len(m["numeros_tecnica"]) == 4 and len(m["como_trabalho"]) == 5
     assert [a["id"] for a in m["areas"]] == ["cobranca", "juridico"]
     assert len(m["projetos"]) == 4
     ids = {a["id"] for a in m["areas"]}

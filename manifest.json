@@ -14,6 +14,12 @@
     {"valor": "418", "rotulo": "testes automatizados"},
     {"valor": "100%", "rotulo": "dados sintéticos"}
   ],
+  "numeros_tecnica": [
+    {"valor": "3,2%", "rotulo": "erro da previsão do dia às 14h"},
+    {"valor": "0,833", "rotulo": "AUC da propensão a pagamento"},
+    {"valor": "56%", "rotulo": "das entregas nos 10% de maior score"},
+    {"valor": "52", "rotulo": "combinações com JS = Python"}
+  ],
   "como_trabalho": [
     {"titulo": "Fotos do dia e travas de publicação", "texto": "Cada dia vira uma foto só com o que se sabia antes dele. Antes de publicar, travas conferem volume, foto ausente e hash do modelo; se algo falha, o painel avisa e segue com a última publicação boa."},
     {"titulo": "Nossa regra × tabela oficial", "texto": "Quando existe um número oficial, o do painel é conciliado com ele todo dia. O painel mostra a diferença e o motivo, em vez de esconder."},

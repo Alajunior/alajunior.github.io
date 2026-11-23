@@ -43,11 +43,13 @@ def _pagina(m: dict, raiz: str, titulo: str, descricao: str, conteudo: str) -> s
 def _home(m: dict) -> str:
     meta = m["meta"]
     ini, _, fim = meta["titulo"].rpartition(" de ")   # última parte em gradiente: "Data Science"
-    numeros = "\n".join(f'    <div class="stat"><b>{e(n["valor"])}</b><span>{e(n["rotulo"])}</span></div>' for n in m["numeros"])
+    def stats(lista):
+        return "\n".join(f'    <div class="stat"><b>{e(n["valor"])}</b><span>{e(n["rotulo"])}</span></div>' for n in lista)
     cards = []
     for a in m["areas"]:
         projs = [p for p in m["projetos"] if p["area"] == a["id"]]
-        itens = "".join(f"<li>{e(p['nome'])}</li>" for p in projs)
+        itens = "".join(f'<li>{e(p["nome"])}<span class="mod-tec so-tecnica">{e(p["tecnica"])} · {e(p["metrica"])}</span></li>'
+                        for p in projs)
         rotulo = f"{len(projs)} projeto" + ("s" if len(projs) > 1 else "")
         cards.append(f'    <a class="cart" href="area/{e(a["id"])}.html"><div class="eye">{rotulo}</div>'
                      f'<h3>{e(a["nome"])}</h3><p>{e(a["resumo"])}</p><ul class="mods">{itens}</ul>'
@@ -56,7 +58,7 @@ def _home(m: dict) -> str:
                          for c in m["como_trabalho"])
     conteudo = _modelo("home.html").substitute(
         sobretitulo=e(meta["sobretitulo"]), titulo_ini=e(ini + " de"), titulo_fim=e(fim), frase=e(meta["frase"]),
-        numeros=numeros, n_areas=f"{len(m['areas'])} áreas", areas="\n".join(cards),
+        numeros=stats(m["numeros"]), numeros_tecnica=stats(m["numeros_tecnica"]), n_areas=f"{len(m['areas'])} áreas", areas="\n".join(cards),
         n_praticas=f"{len(m['como_trabalho'])} práticas", praticas=praticas)
     return _pagina(m, "", f"{meta['titulo']} · {meta['autor']}", meta["frase"], conteudo)
 
